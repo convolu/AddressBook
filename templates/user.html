@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+
+<HTML>
+<HEAD>
+	<link rel="stylesheet" type="text/css" href="/css/stylesheet.css" />
+</HEAD>
+
+<BODY>
+	<H1>Use this form to add users</H1>
+	<FORM class="form" method="POST" action="/addcustomer" >
+		{% raw xsrf_form_html() %}
+		<DIV>First name: <INPUT type="text" name="firstname"></DIV><BR>
+		<DIV>Last name: <INPUT type="text" name="lastname"></DIV><BR>
+		<DIV>Email: <INPUT type="text" name="email"></DIV><BR>
+		<INPUT type="submit" value="Submit">
+	</FORM>
+
+</BODY>
+
+</HTML>

@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+
+<HTML>
+<HEAD>
+	<link rel="stylesheet" type="text/css" href="/css/stylesheet.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		var x=$().jquery;
+		console.log(x);
+	</script>
+</HEAD>
+
+<BODY>
+	<H1>Use this form to view users</H1>
+	
+	<UL>
+		{% for user in users %}
+			<LI><STRONG>Name:</STRONG> {{user[0]}} </LI>
+			<LI><STRONG>Surname:</STRONG> {{user[1]}} </LI>
+			<LI><STRONG>Email:</STRONG> {{user[2]}} </LI>
+			<INPUT type="checkbox" name="delete"> Delete </INPUT>
+			<BR>
+		{% end %}
+
+	</UL>
+
+	<INPUT type="button" id="delete-btn" value="Delete" />
+
+</BODY>
+
+</HTML>
