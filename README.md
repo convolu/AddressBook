@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 tornado-boilerplate -- a standard layout for Tornado apps
 ===============================================================================
 
@@ -198,3 +199,7 @@ If you have improvements or bug fixes:
 
 * [Bueda Inc.](http://www.bueda.com)
 * Christopher Peplin, peplin@bueda.com, @[peplin](http://twitter.com/peplin)
+=======
+AddressBook
+===========
+>>>>>>> d58ffb0b2cfb551336c0590a9692bf9a75aaa001
