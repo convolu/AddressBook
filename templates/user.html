@@ -1,20 +1,14 @@
-<!DOCTYPE HTML>
+{% extends "base.html" %}
 
-<HTML>
-<HEAD>
-	<link rel="stylesheet" type="text/css" href="/css/stylesheet.css" />
-</HEAD>
-
-<BODY>
-	<H1>Use this form to add users</H1>
-	<FORM class="form" method="POST" action="/addcustomer" >
-		{% raw xsrf_form_html() %}
-		<DIV>First name: <INPUT type="text" name="firstname"></DIV><BR>
-		<DIV>Last name: <INPUT type="text" name="lastname"></DIV><BR>
-		<DIV>Email: <INPUT type="text" name="email"></DIV><BR>
-		<INPUT type="submit" value="Submit">
-	</FORM>
-
-</BODY>
-
-</HTML>
+    {% block maincontent %}
+    <div class="hero-unit">
+     	<h1>Use this form to add users</h1>
+		<form class="form" method="POST" action="/addcustomer" >
+			{% raw xsrf_form_html() %}
+			<div>First name: <input type="text" name="firstname"></div><br>
+			<div>Last name: <input type="text" name="lastname"></div><br>
+			<div>Email: <input type="text" name="email"></div><br>
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+    {% end %}

@@ -1,10 +1,33 @@
+<!DOCTYPE HTML>
+
+<html>
 <head>
 	<title>The Coolest Address Book on Earth</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css" />
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script type="text/javascript" src="../static/js/bootstrap.js"></script>
 </head>
 
-<div class="nav-bar">
-		<a href="/">Home</a>
-		<a href="/createuser">Create User</a>
-		<a href="/addcontact">Add Contact</a>
-		<a href="/viewaddressbook">View Address Book</a>
-</div>
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<div class="nav-collapse collapse">
+					<ul class="nav">
+						<li><a href="/">Home</a></li>
+						<li><a href="/createuser">Create User</a></li>
+						<li><a href="/addcontact">Add Contact</a></li>
+						<li><a href="/viewaddressbook">View Address Book</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	{% block maincontent %}
+	{% end %}
+
+</body>
+
+</html>

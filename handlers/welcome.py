@@ -7,7 +7,7 @@ import logging
 logger = logging.getLogger('boilerplate.' + __name__)
 
 try:
-	conn = psycopg2.connect("dbname=address_book_db user=convolu")
+	conn = psycopg2.connect("dbname=ADDRESS user=convolu")
 except:
 	print "Could not connect to address_book_db"
 
@@ -30,7 +30,7 @@ class ViewAddressBookHandler(BaseHandler):
 	def get(self):
 		cur = conn.cursor()
 
-		cur.execute("SELECT * from USERS2")
+		cur.execute("SELECT * from USERS")
 
 		users = cur.fetchall()
 
@@ -44,14 +44,19 @@ class ViewAddressBookHandler(BaseHandler):
 
 class AddCustomerHandler(BaseHandler):
 	def post(self):
-		firstname = self.get_arguments('firstname', strip=True)
-		lastname  = self.get_arguments('lastname', strip=True)
-		email     = self.get_arguments('email', strip=True)
+		firstname = self.get_argument('firstname')
+		lastname  = self.get_argument('lastname')
+		email     = self.get_argument('email')
 
 		cur = conn.cursor()
 
-		cur.execute("INSERT INTO USERS2 (name, surname, email) VALUES (%s, %s, %s)", (firstname, lastname, email))
+		cur.execute("INSERT INTO USERS (firstname, lastname, email) VALUES (%s, %s, %s)", (firstname, lastname, email))
 
 		conn.commit()
 
 		cur.close()
+
+		self.redirect("/createuser")
+
+	def get(self):
+		self.write("TEST")

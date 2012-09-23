@@ -1,29 +1,22 @@
-<!DOCTYPE HTML>
+{% extends "base.html" %}
 
-<HTML>
-<HEAD>
-	<link rel="stylesheet" type="text/css" href="../static/css/stylesheet.css" />
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-	<script type="text/javascript" src="../static/js/address.js"></script>
-</HEAD>
-
-<BODY>
-	<H1>Use this form to view users</H1>
+    {% block maincontent %}
+    <div class="hero-unit">
+     	<h1>Use this form to view users</h1>
+     	<br>
+     	<br>
 	
-	<UL>
-		{% for user in users %}
-			<!-- <INPUT type="hidden" name="cust-id" value="{{user[3]}}" /> -->
-			<LI><STRONG>Name:</STRONG> {{user[0]}} </LI>
-			<LI><STRONG>Surname:</STRONG> {{user[1]}} </LI>
-			<LI><STRONG>Email:</STRONG> {{user[2]}} </LI>
-			<INPUT type="checkbox" name="delete"> Delete </INPUT>
-			<BR>
-		{% end %}
+		<ul style="list-style-type: none;">
+			{% for user in users %}
+				<li><strong>Name:</strong> {{user[1]}} </li>
+				<li><strong>Surname:</strong> {{user[2]}} </li>
+				<li><strong>Email:</strong> {{user[3]}} </li>
+				<input type="checkbox" name="delete"> Delete </input>
+				<br>
+				<br>
+			{% end %}
+		</ul>
 
-	</UL>
-
-	<INPUT type="button" id="delete-btn" value="Delete" onclick="deletee()" />
-
-</BODY>
-
-</HTML>
+		<input type="button" class="btn btn-primary btn-large" value="Delete" />
+	</div>
+    {% end %}
