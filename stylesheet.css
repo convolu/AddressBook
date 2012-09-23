@@ -1,0 +1,12 @@
+div.nav-bar {
+	border-style: solid;
+	border-width: medium;
+	border-radius: 5px;
+	text-align: center;
+}
+
+a.btn {
+    color: green;
+    background-color: lightblue;
+    border-radius: 5px;    
+}

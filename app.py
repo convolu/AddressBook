@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import os
 import tornado.httpserver
 import tornado.ioloop
 import tornado.web
@@ -10,6 +11,10 @@ from urls import url_patterns
 
 class TornadoBoilerplate(tornado.web.Application):
     def __init__(self):
+    	settings = {
+    		'static_path'   : "static",
+            'template_path' : "templates",
+		}
         tornado.web.Application.__init__(self, url_patterns, **settings)
 
 
